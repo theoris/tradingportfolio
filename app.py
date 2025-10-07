@@ -351,7 +351,7 @@ def app():
             color = 'green' if val > 0 else 'red' if val < 0 else 'black'
             return f'color: {color}'
 
-        st.dataframe(formatted_df[existing_columns].style.applymap(color_pnl, subset=['P&L']).format({
+        st.dataframe(formatted_df[existing_columns].style.map(color_pnl, subset=['P&L']).format({
             'Qty': '{:.0f}',
             'Entry price': '{:,.2f}',
             'Exit price': '{:,.2f}',
@@ -362,7 +362,7 @@ def app():
             'P&L': '{:,.2f}',
             'payoff': '{:,.2f}',
             'Cumulative P&L': '{:,.2f}'
-        }))#, use_container_width=True)
+        }))
 
         # def color_pnl(val):
         #     color = 'green' if val > 0 else 'red' if val < 0 else 'black'
@@ -371,7 +371,7 @@ def app():
         # styler = (
         #     formatted_df[existing_columns]
         #     .style
-        #     .applymap(color_pnl, subset=['P&L'])
+        #     .map(color_pnl, subset=['P&L'])
         #     .format({
         #         'Qty': '{:.0f}',
         #         'Entry price': '{:,.2f}',
