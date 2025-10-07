@@ -325,7 +325,7 @@ def app():
                             title='P&L Distribution Across Assets',
                             color='P&L',
                             color_continuous_scale=px.colors.diverging.Tealrose)
-        st.plotly_chart(fig_series, use_container_width=True)
+        st.plotly_chart(fig_series)#, use_container_width=True)
 
         st.subheader("Cumulative Portfolio Value Over Time")
         processed_df['Entry date'] = pd.to_datetime(processed_df['Entry date'], errors='coerce')
@@ -333,7 +333,7 @@ def app():
         processed_df['Cumulative P&L'] = processed_df['P&L'].cumsum()
         fig_time = px.line(processed_df.dropna(subset=['Entry date']), x='Entry date', y='Cumulative P&L',
                             title='Portfolio P&L Over Time')
-        st.plotly_chart(fig_time, use_container_width=True)
+        st.plotly_chart(fig_time)#, use_container_width=True)
 
         st.markdown("---")
 
@@ -362,7 +362,7 @@ def app():
             'P&L': '{:,.2f}',
             'payoff': '{:,.2f}',
             'Cumulative P&L': '{:,.2f}'
-        }), use_container_width=True)
+        }))#, use_container_width=True)
 
         # def color_pnl(val):
         #     color = 'green' if val > 0 else 'red' if val < 0 else 'black'

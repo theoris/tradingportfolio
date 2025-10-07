@@ -4,3 +4,5 @@ node_modules/
 util/
 *.bat
 vendor/
+*.py
+scrape/
