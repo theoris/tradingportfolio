@@ -6,3 +6,4 @@ util/
 vendor/
 *.py
 scrape/
+app.py
